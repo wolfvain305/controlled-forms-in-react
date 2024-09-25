@@ -16,7 +16,7 @@ const handleAddBook = (e) => {
 }
 return (
 <div className="bookshelfDiv">
-  <div className="formDiv">
+<div className="formDiv">
     <h3>Add a Book</h3>
     <form onSubmit={handleAddBook}>
         <input
@@ -27,13 +27,17 @@ return (
         />
         <button type="submit">Add Book</button>
     </form>
-  </div>
-  <div className="bookCardsDiv">
-    {/* Book cards will display here */}
+</div>
+<div className="bookCardsDiv">
+    {books.map((book, index) => (
+        <div key={index} className='bookCard'>
+                <h4>{book.title}</h4>
+                <p>{book.author}</p>
+        </div>
+    ))}
 </div>
 </div>
-
 )
-
-export default BookshelfD;
 }
+
+export default BookShelf;
