@@ -18,9 +18,19 @@ return (
 <div className="bookshelfDiv">
   <div className="formDiv">
     <h3>Add a Book</h3>
-    {/* Form will go here */}
+    <form onSubmit={handleAddBook}>
+        <input
+        type="text" placeholder='Book Title' value={title} onChange={(e) => setTitle(e.target.value)} required
+        />
+        <input
+        type="text" placeholder='Author' value={author} onChange={(e) => setTitle(e.target.value)} required
+        />
+        <button type="submit">Add Book</button>
+    </form>
   </div>
-  <div className="bookCardsDiv">{/* Book cards will display here */}</div>
+  <div className="bookCardsDiv">
+    {/* Book cards will display here */}
+</div>
 </div>
 
 )
